@@ -2,6 +2,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 
 typedef	struct s_all{
 	std::string first_name;
@@ -18,6 +19,7 @@ class Contact{
 		std::string phone_number;
 		std::string nick_name;
 		std::string darkest_secret;
+		// int i;
 	public:
 		void set_all(t_all *info);
 		t_all get_all();
