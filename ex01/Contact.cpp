@@ -7,7 +7,6 @@ void Contact::set_all(t_all *info)
 	this->phone_number = info->phone_number;
 	this->darkest_secret = info->darkest_secret;
 	this->nick_name = info->nick_name;
-	// this->exist = 1;
 }
 
 t_all Contact::get_all()

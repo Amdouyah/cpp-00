@@ -26,11 +26,6 @@ void	get_info(PhoneBook *cla, int i)
 	info.nick_name = getdata("Nick Name : ");
 	cla->set_contact_info(i, &info);
 }
-// void get_firstname(PhoneBook *cla, int i)
-// {
-// 	get_info(cla, i);
-// }
-
 
 void	SEARCH(PhoneBook *cla)
 {
@@ -56,13 +51,29 @@ void	SEARCH(PhoneBook *cla)
             std::cout << "|" << std::setw(10) << all.nick_name;
             std::cout << "|" << std::endl;
 			std::cout << "********************************************"<< std::endl;
-			
+			std::cout << "Enter an indix : ";
         }
         i++;
     }
 	if (!contactExists)
     {
         std::cout << "No contacts found." << std::endl;
+    }
+	int inputIndex;
+    std::cout << "Enter an index: ";
+    std::cin >> inputIndex;
+	if (inputIndex >= 0 && inputIndex < 8)
+    {
+        // Display the contact information
+        t_all selectedContact = cla->print_all_contacts(inputIndex);
+        std::cout << "Contact information:" << std::endl;
+        std::cout << "First Name: " << selectedContact.first_name << std::endl;
+        std::cout << "Last Name: " << selectedContact.last_name << std::endl;
+        std::cout << "Nickname: " << selectedContact.nick_name << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid index. Please enter a valid index." << std::endl;
     }
 	// std::cout << "Enter index : " << std::endl;
 	// std::cout << cla[i].set_contact_info(i, )
