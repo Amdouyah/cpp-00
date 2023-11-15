@@ -3,20 +3,19 @@
 
 int main(int ac, char **av)
 {
-	if(ac == 2)
+	if(ac != 1)
 	{
 		int i = 1;
 		while(i < ac)
 		{
-			std::string input(av[i]);
+			std::string str = av[i];
 			int a = 0;
-			while(input[a])
+			while (str[a])
 			{
-				input[a] = std::toupper(input[a]);
-				i++;
+				str[a] = std::toupper(str[a]);
 				a++;
 			}
-			std::cout << input;
+			std::cout << str;
 			i++;
 		}
 		std::cout << std::endl;
